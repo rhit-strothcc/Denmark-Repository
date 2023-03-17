@@ -6,4 +6,5 @@
  *
  */
 module denmarkProject {
+	requires java.desktop;
 }
