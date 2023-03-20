@@ -8,7 +8,7 @@ public class Viewer {
 		JFrame frame = new JFrame();
 
 		frame.setSize(400, 400);
-		frame.setTitle("Welcome");
+		frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
