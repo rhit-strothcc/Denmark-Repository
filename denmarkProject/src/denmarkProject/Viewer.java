@@ -1,5 +1,6 @@
 package denmarkProject;
 
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 public class Viewer {
@@ -11,7 +12,13 @@ public class Viewer {
 		frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		Component component = new Component(frame);
+		component.update();
 		frame.setVisible(true);
 	}
+	
+	
 
 }
