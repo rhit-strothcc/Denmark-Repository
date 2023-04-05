@@ -3,7 +3,10 @@ package denmarkProject;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -22,13 +25,43 @@ public class Component extends JComponent {
 	
 	ArrayList<Page> pages;
 	int currentpage = 0;
-	JFrame frame;
-	
-	public Component(JFrame frame) {
-		this.frame = frame;
+	ArrayList<String> holidayNames;
+	ArrayList<String> holidayDates;
+	ArrayList<String> holidayHistory;
+	ArrayList<String> howtoCelebrate;
+
+	public Component() {
+		holidayNames = new ArrayList<String>();
+		holidayDates = new ArrayList<String>();
+		holidayHistory = new ArrayList<String>();
+		howtoCelebrate = new ArrayList<String>();
 		pages = new ArrayList<Page>();
 		pages.add(new HomeScreen(this));
 		pages.add(new AllHolidaysScreen(10,this));
+		
+	}
+	
+	public void parseFile() {
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("C://Users/strothcc/git/Denmark-Repository/denmarkProject/src/denmarkProject/holidays.csv"));
+			String line;
+			
+			while ((line = br.readLine()) != null) {
+				String[] values = line.split(",");
+				holidayNames.add(values[0]);
+				holidayDates.add(values[1]);
+				holidayHistory.add(values[2]);
+				howtoCelebrate.add(values[3]);
+			}
+			
+			System.out.println(holidayNames);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 		
 	}
 	
@@ -50,7 +83,8 @@ public class Component extends JComponent {
 	}
 	
 	public void update() {
-		pages.get(currentpage).drawPage(frame);
+		parseFile();
+		pages.get(currentpage).drawPage();
 	}
 
 }

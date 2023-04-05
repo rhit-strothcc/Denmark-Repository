@@ -8,12 +8,13 @@ public abstract class Page {
 	
 	String title;
 	Component component;
+	JFrame frame;
 	
 	public Page(Component component) {
 		this.component = component;
 	}
 	
-	public abstract void drawPage(JFrame g);
+	public abstract void drawPage();
 		
 	
 

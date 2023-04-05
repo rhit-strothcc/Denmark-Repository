@@ -21,6 +21,15 @@ public class HomeScreen extends Page{
 	
 	public HomeScreen(Component c) {
 		super(c);
+		frame = new JFrame();
+
+		frame.setSize(500, 500);
+		frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
 	}
 	
 	Icon ic = new ImageIcon("C://Users//dowdelmm//OneDrive - Rose-Hulman Institute of Technology//Documents//Pictures/header_image_cold_toleration-400x300.jpg");
@@ -42,27 +51,33 @@ public class HomeScreen extends Page{
 	
 	
 	@Override
-	public void drawPage(JFrame g) {
+	public void drawPage() {
 	//g.setContentPane(new Component(g));
 
+    frame.setSize(500, 500);
+	frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
+
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+			
 	img.setIcon(ic);
-	g.add(bigt, BorderLayout.NORTH);
+	frame.add(bigt, BorderLayout.NORTH);
 	
 	
 	
-	g.add(startp, BorderLayout.CENTER);
+	frame.add(startp, BorderLayout.CENTER);
 	bigt.add(bigtext);
 
-	g.add(imagep, BorderLayout.CENTER);
+	frame.add(imagep, BorderLayout.CENTER);
 	imagep.add(img);
 	smallt.add(smalltext);
-	g.add(smallt, BorderLayout.SOUTH);
+	frame.add(smallt, BorderLayout.SOUTH);
 	startp.add(startb);
-	g.add(startp);
+	frame.add(startp);
 	startp.setPreferredSize(new Dimension(100, 50));
 	startp.setOpaque(false);
 	bigtext.setFont(new Font("Sans Serif", 25, 25));
-	startb.addActionListener(new StartBListener(g));
+	startb.addActionListener(new StartBListener(this.frame));
 	
 	
 	}
@@ -71,9 +86,10 @@ public class HomeScreen extends Page{
 		
 		JFrame frame;
 		
-		StartBListener(JFrame g){
-			this.frame = g;
+		StartBListener(JFrame f){
+			this.frame = f;
 		}
+		
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -82,8 +98,11 @@ public class HomeScreen extends Page{
 			// TODO Auto-generated method stub
 			component.nextPage();
 			component.update();
+			frame.setVisible(false);
 		}
 		
 	}
+
+
 
 }
