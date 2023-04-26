@@ -44,7 +44,7 @@ public class Component extends JComponent {
 	public void parseFile() {
 		BufferedReader br = null;
 		try {
-			br = new BufferedReader(new FileReader("C://Users/strothcc/git/Denmark-Repository/denmarkProject/src/denmarkProject/holidays.csv"));
+			br = new BufferedReader(new FileReader("src/denmarkProject/holidays.csv"));
 			String line;
 			
 			while ((line = br.readLine()) != null) {
