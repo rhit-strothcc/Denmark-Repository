@@ -29,15 +29,17 @@ public class Component extends JComponent {
 	ArrayList<String> holidayDates;
 	ArrayList<String> holidayHistory;
 	ArrayList<String> howtoCelebrate;
+	ArrayList<String> celebratedInBoth;
 
 	public Component() {
 		holidayNames = new ArrayList<String>();
 		holidayDates = new ArrayList<String>();
 		holidayHistory = new ArrayList<String>();
 		howtoCelebrate = new ArrayList<String>();
+		celebratedInBoth = new ArrayList<String>();
 		pages = new ArrayList<Page>();
 		pages.add(new HomeScreen(this));
-		pages.add(new AllHolidaysScreen(10,this));
+		pages.add(new AllHolidaysScreen(16,this));
 		
 	}
 	
@@ -52,7 +54,9 @@ public class Component extends JComponent {
 				holidayNames.add(values[0]);
 				holidayDates.add(values[1]);
 				holidayHistory.add(values[2]);
+				//System.out.println(values[2]);
 				howtoCelebrate.add(values[3]);
+				celebratedInBoth.add(values[4]);
 			}
 			
 			System.out.println(holidayNames);
