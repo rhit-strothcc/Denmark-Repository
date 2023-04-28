@@ -25,6 +25,9 @@ public class SingleHolidayScreen extends Page {
 		frame.add(new JLabel(component.holidayNames.get(holidayId)) );
 		frame.add(new JLabel("Date: "+component.holidayDates.get(holidayId)));
 		frame.add(new JLabel("History: "+component.holidayHistory.get(holidayId)));
+		frame.add(new JLabel("What to Wear: "+component.whatToWear.get(holidayId)));
+		frame.add(new JLabel("Food and Drinks: "+component.foodAndDrinks.get(holidayId)));
+		frame.add(new JLabel("How to Celebrate: "+component.howtoCelebrate.get(holidayId)));
 		frame.setVisible(true);
 		
 		// TODO Auto-generated method stub
