@@ -44,7 +44,7 @@ public class Component extends JComponent {
 		foodAndDrinks = new ArrayList<String>();
 		pages = new ArrayList<Page>();
 		pages.add(new HomeScreen(this));
-		pages.add(new AllHolidaysScreen(16,this));
+		pages.add(new AllHolidaysScreen(16,this,false));
 		
 	}
 	
@@ -56,6 +56,10 @@ public class Component extends JComponent {
 			
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
+				for(String s:values) {
+					System.out.println(s);
+				}
+				System.out.println(values);
 				holidayNames.add(values[0]);
 				holidayDates.add(values[1]);
 				holidayHistory.add(values[2]);
