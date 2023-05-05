@@ -50,7 +50,7 @@ public class SingleHolidayScreen extends Page {
 			area.setOpaque(false);
 			area.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 		}
-		frame.setSize(600,600);
+		frame.setSize(1100,825);
 
 		frame.setVisible(true);
 		
