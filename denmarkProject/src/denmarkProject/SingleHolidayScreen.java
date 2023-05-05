@@ -29,6 +29,7 @@ public class SingleHolidayScreen extends Page {
 		frame.setLayout(new GridLayout(2,1));
 		System.out.print(component.holidayNames.get(holidayId));
 		frame.setTitle(component.holidayNames.get(holidayId));
+
 		container.setLayout(new GridLayout(6,1));
 		String url = "src/denmarkProject/" + holidayId +".png";
 		JLabel img = new JLabel(new ImageIcon(url));
@@ -50,6 +51,7 @@ public class SingleHolidayScreen extends Page {
 			area.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 		}
 		frame.setSize(600,600);
+
 		frame.setVisible(true);
 		
 		// TODO Auto-generated method stub
