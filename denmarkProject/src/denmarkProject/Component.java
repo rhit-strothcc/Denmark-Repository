@@ -58,7 +58,7 @@ public class Component extends JComponent {
 				for (String s : values) {
 //					System.out.println(s);
 				}
-				System.out.println(values);
+//				System.out.println(values);
 				holidayNames.add(values[0]);
 				holidayDates.add(values[1]);
 				holidayHistory.add(values[2]);
