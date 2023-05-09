@@ -28,7 +28,7 @@ public class SingleHolidayScreen extends Page {
 
 		JPanel container = new JPanel();
 		frame.setLayout(new GridLayout(2, 1));
-		System.out.print(component.holidayNames.get(holidayId));
+//		System.out.print(component.holidayNames.get(holidayId));
 		frame.setTitle(component.holidayNames.get(holidayId));
 
 		container.setLayout(new GridLayout(6, 1));
@@ -54,9 +54,6 @@ public class SingleHolidayScreen extends Page {
 		frame.setSize(1100, 825);
 
 		frame.setVisible(true);
-
-		// TODO Auto-generated method stub
-
 	}
 
 }

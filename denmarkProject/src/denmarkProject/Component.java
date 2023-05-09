@@ -56,7 +56,7 @@ public class Component extends JComponent {
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
 				for (String s : values) {
-					System.out.println(s);
+//					System.out.println(s);
 				}
 				System.out.println(values);
 				holidayNames.add(values[0]);
@@ -70,9 +70,8 @@ public class Component extends JComponent {
 
 			}
 
-			System.out.println(holidayNames);
+//			System.out.println(holidayNames);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

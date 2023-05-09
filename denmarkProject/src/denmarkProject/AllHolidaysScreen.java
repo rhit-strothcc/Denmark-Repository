@@ -34,14 +34,14 @@ public class AllHolidaysScreen extends Page {
 
 		frame.setSize(1100, 900);
 		frame.setVisible(true);
-		System.out.println("here");
+//		System.out.println("here");
 		JPanel container = new JPanel();
 		container.setLayout(new GridLayout((((numEntries) / 3) + 1), 3));
 		frame.add(container);
-		System.out.println(numEntries);
-		System.out.println(numEntries);
+//		System.out.println(numEntries);
+//		System.out.println(numEntries);
 
-//	System.out.println("here");
+//		System.out.println("here");
 		for (int i = 1; i < numEntries; i++) {
 			System.out.println(component.celebratedInBoth.get(i));
 			if (!bothMode | component.celebratedInBoth.get(i).equals("TRUE")) {
@@ -84,7 +84,6 @@ public class AllHolidaysScreen extends Page {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
 			AllHolidaysScreen next = new AllHolidaysScreen(numEntries, c, !bothMode);
 			next.drawPage();
 		}
