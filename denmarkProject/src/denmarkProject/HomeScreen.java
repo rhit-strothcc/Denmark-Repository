@@ -48,9 +48,9 @@ public class HomeScreen extends Page{
 	
 	
 	JButton startb = new JButton("Start");
-	JButton xb = new JButton("Close");
+//	JButton xb = new JButton("Close");
 	JLabel bigtext = new JLabel("Welcome to Stars, Stripes, and Celebrations");
-	JLabel smalltext = new JLabel("By Madeleine Klee & Chase Strother");
+//	JLabel smalltext = new JLabel("By Madeleine Klee & Chase Strother");
 	
 	
 	@Override
@@ -66,16 +66,16 @@ public class HomeScreen extends Page{
 	img.setIcon(ic);
 	smallt.setBounds(frame.getSize().width/5, 100, 300,50);
 	frame.add(bigt, BorderLayout.NORTH);
-	frame.add(smallt);
+//	frame.add(smallt);
 	frame.add(startp, BorderLayout.CENTER);
 	bigt.add(bigtext);
 	imagep.add(img);
 	frame.add(imagep, BorderLayout.PAGE_END);
-	smallt.add(smalltext);
+//	smallt.add(smalltext);
 	
 	startp.add(startb);
 	frame.add(startp);
-	xb.setSize(40, 50);
+//	xb.setSize(40, 50);
 	img.setMaximumSize(new Dimension(500,400));
 	img.setPreferredSize(new Dimension(500,300));	
 	startp.setPreferredSize(new Dimension(100, 50));
