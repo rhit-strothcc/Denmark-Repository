@@ -89,7 +89,6 @@ public class HomeScreen extends Page {
 		public void actionPerformed(ActionEvent e) {
 			frame.removeAll();
 //			System.out.println("done");
-			// TODO Auto-generated method stub
 			component.nextPage();
 			component.update();
 			frame.setVisible(false);

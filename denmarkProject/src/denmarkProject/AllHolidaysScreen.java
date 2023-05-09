@@ -43,7 +43,7 @@ public class AllHolidaysScreen extends Page {
 
 //		System.out.println("here");
 		for (int i = 1; i < numEntries; i++) {
-			System.out.println(component.celebratedInBoth.get(i));
+//			System.out.println(component.celebratedInBoth.get(i));
 			if (!bothMode | component.celebratedInBoth.get(i).equals("TRUE")) {
 				JPanel k = new JPanel();
 				container.add(k);
