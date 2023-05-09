@@ -32,8 +32,9 @@ public class HomeScreen extends Page{
 		
 	}
 	
-	Icon ic = new ImageIcon("C://Users//dowdelmm//OneDrive - Rose-Hulman Institute of Technology//Documents//Pictures/header_image_cold_toleration-400x300.jpg");
-	JLabel img = new JLabel();
+	ImageIcon ic = new ImageIcon("src/denmarkProject/Flag.png");
+	JLabel img = new JLabel(ic);
+	
 	
 
 
@@ -43,11 +44,13 @@ public class HomeScreen extends Page{
 	JPanel bigt = new JPanel();
 	JPanel smallt = new JPanel();
 	JPanel imagep = new JPanel();
+	JPanel closeb = new JPanel();
+	
 	
 	JButton startb = new JButton("Start");
-	JButton xb = new JButton("Close");
+//	JButton xb = new JButton("Close");
 	JLabel bigtext = new JLabel("Welcome to Stars, Stripes, and Celebrations");
-	JLabel smalltext = new JLabel("By Madeleine Klee & Chase Strother");
+//	JLabel smalltext = new JLabel("By Madeleine Klee & Chase Strother");
 	
 	
 	@Override
@@ -61,19 +64,20 @@ public class HomeScreen extends Page{
 	frame.setVisible(true);
 			
 	img.setIcon(ic);
+	smallt.setBounds(frame.getSize().width/5, 100, 300,50);
 	frame.add(bigt, BorderLayout.NORTH);
-	
-	
-	
+//	frame.add(smallt);
 	frame.add(startp, BorderLayout.CENTER);
 	bigt.add(bigtext);
-
-	frame.add(imagep, BorderLayout.CENTER);
 	imagep.add(img);
-	smallt.add(smalltext);
-	frame.add(smallt, BorderLayout.SOUTH);
+	frame.add(imagep, BorderLayout.PAGE_END);
+//	smallt.add(smalltext);
+	
 	startp.add(startb);
 	frame.add(startp);
+//	xb.setSize(40, 50);
+	img.setMaximumSize(new Dimension(500,400));
+	img.setPreferredSize(new Dimension(500,300));	
 	startp.setPreferredSize(new Dimension(100, 50));
 	startp.setOpaque(false);
 	bigtext.setFont(new Font("Sans Serif", 25, 25));

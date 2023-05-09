@@ -22,7 +22,7 @@ public class Component extends JComponent {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	ArrayList<Page> pages;
 	int currentpage = 0;
 	ArrayList<String> holidayNames;
@@ -32,7 +32,6 @@ public class Component extends JComponent {
 	ArrayList<String> celebratedInBoth;
 	ArrayList<String> whatToWear;
 	ArrayList<String> foodAndDrinks;
-
 
 	public Component() {
 		holidayNames = new ArrayList<String>();
@@ -44,60 +43,49 @@ public class Component extends JComponent {
 		foodAndDrinks = new ArrayList<String>();
 		pages = new ArrayList<Page>();
 		pages.add(new HomeScreen(this));
-		pages.add(new AllHolidaysScreen(16,this,false));
-		
+		pages.add(new AllHolidaysScreen(16, this, false));
+
 	}
-	
+
 	public void parseFile() {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader("src/denmarkProject/holidays.csv"));
 			String line;
-			
+
 			while ((line = br.readLine()) != null) {
 				String[] values = line.split(",");
-				for(String s:values) {
+				for (String s : values) {
 					System.out.println(s);
 				}
 				System.out.println(values);
 				holidayNames.add(values[0]);
 				holidayDates.add(values[1]);
 				holidayHistory.add(values[2]);
-				//System.out.println(values[2]);
+				// System.out.println(values[2]);
 				howtoCelebrate.add(values[3]);
 				celebratedInBoth.add(values[6]);
 				whatToWear.add(values[5]);
 				foodAndDrinks.add(values[4]);
 
 			}
-			
+
 			System.out.println(holidayNames);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		
-		
 	}
-	
+
 	public void nextPage() {
 		this.currentpage++;
 	}
-	
+
 	public void paintComponent(Graphics g) {
-//		BufferedImage img = null;
-//		try {
-//			img = ImageIO.read(new File("C://Users//dowdelmm//OneDrive - Rose-Hulman Institute of Technology//Documents//Pictures/header_image_cold_toleration-400x300.jpg"));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		super.paintComponent(g);
-//		g.drawImage(img, 0, 0, this);
+
 	}
-	
+
 	public void update() {
 		parseFile();
 		pages.get(currentpage).drawPage();

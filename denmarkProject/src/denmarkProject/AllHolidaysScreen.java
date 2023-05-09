@@ -36,52 +36,50 @@ public class AllHolidaysScreen extends Page {
 		frame.setVisible(true);
 		System.out.println("here");
 		JPanel container = new JPanel();
-		container.setLayout(new GridLayout( (((numEntries) / 3) + 1) , 3));
+		container.setLayout(new GridLayout((((numEntries) / 3) + 1), 3));
 		frame.add(container);
 		System.out.println(numEntries);
 		System.out.println(numEntries);
-		
 
 //	System.out.println("here");
 		for (int i = 1; i < numEntries; i++) {
 			System.out.println(component.celebratedInBoth.get(i));
-			if(!bothMode | component.celebratedInBoth.get(i).equals("TRUE")) {
-			JPanel k = new JPanel();
-			container.add(k);
-			k.setLayout(new GridLayout (2,1));
-			String url = "src/denmarkProject/" + i +".png";
-			JLabel img = new JLabel(new ImageIcon(url));
-			JButton j = new JButton(component.holidayNames.get(i));
-			k.add(img);
-			img.setMaximumSize(new Dimension(150,100));
-			img.setPreferredSize(new Dimension(150,100));
-			j.addActionListener(new HolidayBListener(frame, i));
-			k.add(j);
+			if (!bothMode | component.celebratedInBoth.get(i).equals("TRUE")) {
+				JPanel k = new JPanel();
+				container.add(k);
+				k.setLayout(new GridLayout(2, 1));
+				String url = "src/denmarkProject/" + i + ".png";
+				JLabel img = new JLabel(new ImageIcon(url));
+				JButton j = new JButton(component.holidayNames.get(i));
+				k.add(img);
+				img.setMaximumSize(new Dimension(150, 100));
+				img.setPreferredSize(new Dimension(150, 100));
+				j.addActionListener(new HolidayBListener(frame, i));
+				k.add(j);
 			}
-			
-				}
 
-		
+		}
+
 		container.add(new JPanel());
 		container.add(bothButton);
 		bothButton.addActionListener(new BothBListener(bothMode, component));
 
 		JScrollPane scroll = new JScrollPane(container);
 		frame.add(scroll);
-		
-		
+
 	}
-	
+
 	public void toggleBothMode() {
 		this.bothMode = !this.bothMode;
 	}
-	
+
 	public class BothBListener implements ActionListener {
 		boolean bothMode;
 		Component c;
-      	public BothBListener(boolean bothMode, Component c){
-      		this.bothMode = bothMode;
-      		this.c = c;
+
+		public BothBListener(boolean bothMode, Component c) {
+			this.bothMode = bothMode;
+			this.c = c;
 		}
 
 		@Override
