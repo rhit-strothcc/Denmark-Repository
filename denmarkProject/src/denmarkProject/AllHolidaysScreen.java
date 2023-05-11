@@ -18,6 +18,7 @@ import javax.swing.JScrollPane;
 public class AllHolidaysScreen extends Page {
 
 	public AllHolidaysScreen(int numEntries, Component c, boolean bothMode) {
+		
 		super(c);
 		this.numEntries = numEntries;
 		this.title = "All";
@@ -31,7 +32,7 @@ public class AllHolidaysScreen extends Page {
 	JButton bothButton = new JButton("Show only countries celebrated in both Denmark and the USA");
 
 	public void drawPage() {
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1100, 900);
 		frame.setVisible(true);
 //		System.out.println("here");

@@ -25,7 +25,6 @@ public class SingleHolidayScreen extends Page {
 	@Override
 	public void drawPage() {
 		frame = new JFrame();
-
 		JPanel container = new JPanel();
 		frame.setLayout(new GridLayout(2, 1));
 //		System.out.print(component.holidayNames.get(holidayId));
