@@ -20,26 +20,25 @@ import javax.swing.SwingConstants;
 public class HomeScreen extends Page {
 
 	public HomeScreen(Component c) {
+		// creates Homescreen taking info from Page
 		super(c);
 		frame = new JFrame();
 
 		frame.setSize(500, 500);
 		frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
-
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
 
+	// initializations
 	ImageIcon ic = new ImageIcon("src/denmarkProject/Flag.png");
 	JLabel img = new JLabel(ic);
-
 	JPanel startp = new JPanel();
 	JPanel closep = new JPanel();
 	JPanel bigt = new JPanel();
 	JPanel smallt = new JPanel();
 	JPanel imagep = new JPanel();
 	JPanel closeb = new JPanel();
-
 	JButton startb = new JButton("Start");
 //	JButton xb = new JButton("Close");
 	JLabel bigtext = new JLabel("Welcome to Stars, Stripes, and Celebrations");
@@ -47,14 +46,14 @@ public class HomeScreen extends Page {
 
 	@Override
 	public void drawPage() {
-		// g.setContentPane(new Component(g));
+		// Draws items on main screen
 
+		// g.setContentPane(new Component(g));
 		frame.setSize(500, 500);
 		frame.setTitle("Welcome to Stars, Stripes, and Celebrations");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-
 		img.setIcon(ic);
 		smallt.setBounds(frame.getSize().width / 5, 100, 300, 50);
 		frame.add(bigt, BorderLayout.NORTH);
@@ -64,7 +63,6 @@ public class HomeScreen extends Page {
 		imagep.add(img);
 		frame.add(imagep, BorderLayout.PAGE_END);
 //	smallt.add(smalltext);
-
 		startp.add(startb);
 		frame.add(startp);
 //	xb.setSize(40, 50);
@@ -78,6 +76,7 @@ public class HomeScreen extends Page {
 	}
 
 	public class StartBListener implements ActionListener {
+		// "Starts" program
 
 		JFrame frame;
 

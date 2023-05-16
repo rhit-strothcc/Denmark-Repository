@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 public class AllHolidaysScreen extends Page {
 
 	public AllHolidaysScreen(int numEntries, Component c, boolean bothMode) {
-		
+
 		super(c);
 		this.numEntries = numEntries;
 		this.title = "All";
@@ -32,6 +32,7 @@ public class AllHolidaysScreen extends Page {
 	JButton bothButton = new JButton("Show only countries celebrated in both Denmark and the USA");
 
 	public void drawPage() {
+		// draws objects
 //		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1100, 900);
 		frame.setVisible(true);
@@ -43,6 +44,7 @@ public class AllHolidaysScreen extends Page {
 //		System.out.println(numEntries);
 
 //		System.out.println("here");
+		// makes all holidays with buttons and pictures
 		for (int i = 1; i < numEntries; i++) {
 //			System.out.println(component.celebratedInBoth.get(i));
 			if (!bothMode | component.celebratedInBoth.get(i).equals("TRUE")) {
@@ -64,17 +66,19 @@ public class AllHolidaysScreen extends Page {
 		container.add(new JPanel());
 		container.add(bothButton);
 		bothButton.addActionListener(new BothBListener(bothMode, component));
-
+		// creates scroll bar
 		JScrollPane scroll = new JScrollPane(container);
 		frame.add(scroll);
 
 	}
 
+	// when true shows holidays in both countries
 	public void toggleBothMode() {
 		this.bothMode = !this.bothMode;
 	}
 
 	public class BothBListener implements ActionListener {
+		// determines whether button was clicked for filtering
 		boolean bothMode;
 		Component c;
 
@@ -91,7 +95,7 @@ public class AllHolidaysScreen extends Page {
 	}
 
 	public class HolidayBListener implements ActionListener {
-
+		// when clicked makes new Holidya Screen
 		JFrame frame;
 		int holidayId;
 
@@ -102,6 +106,7 @@ public class AllHolidaysScreen extends Page {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			// gets holiday info form Compopnent and populates Single hooliday Screen
 			component.pages.add(new SingleHolidayScreen(component, holidayId));
 			component.nextPage();
 			component.update();

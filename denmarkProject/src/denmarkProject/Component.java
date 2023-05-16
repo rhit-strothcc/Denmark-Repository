@@ -34,6 +34,7 @@ public class Component extends JComponent {
 	ArrayList<String> foodAndDrinks;
 
 	public Component() {
+		// initializes ArrayLists
 		holidayNames = new ArrayList<String>();
 		holidayDates = new ArrayList<String>();
 		holidayHistory = new ArrayList<String>();
@@ -50,6 +51,7 @@ public class Component extends JComponent {
 	public void parseFile() {
 		BufferedReader br = null;
 		try {
+			// turns excel file into something Java can read
 			br = new BufferedReader(new FileReader("src/denmarkProject/holidays.csv"));
 			String line;
 
@@ -59,6 +61,8 @@ public class Component extends JComponent {
 //					System.out.println(s);
 				}
 //				System.out.println(values);
+
+				// assigns info in excel sheet to respective ArrayList
 				holidayNames.add(values[0]);
 				holidayDates.add(values[1]);
 				holidayHistory.add(values[2]);

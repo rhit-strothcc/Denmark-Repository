@@ -30,6 +30,7 @@ public class SingleHolidayScreen extends Page {
 //		System.out.print(component.holidayNames.get(holidayId));
 		frame.setTitle(component.holidayNames.get(holidayId));
 
+		// takes info and displays on respective screen
 		container.setLayout(new GridLayout(6, 1));
 		String url = "src/denmarkProject/" + holidayId + ".png";
 		JLabel img = new JLabel(new ImageIcon(url));
@@ -42,7 +43,9 @@ public class SingleHolidayScreen extends Page {
 		areas.add(new JTextArea("What to Wear: " + component.whatToWear.get(holidayId)));
 		areas.add(new JTextArea("Food and Drinks: " + component.foodAndDrinks.get(holidayId)));
 		areas.add(new JTextArea("How to Celebrate: " + component.howtoCelebrate.get(holidayId)));
+
 		for (JTextArea area : areas) {
+			// wraps the text
 			container.add(area);
 			area.setWrapStyleWord(false);
 			area.setLineWrap(true);
